@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './index.scss';
 import App from './App';
+import Scroll from "./components/Scroll";
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
+    <Scroll>
     <App />
+
+
+    </Scroll>
   </React.StrictMode>,
   document.getElementById('root')
 );
