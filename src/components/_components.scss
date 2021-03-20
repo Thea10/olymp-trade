@@ -1,0 +1,354 @@
+@import "../base";
+
+nav {
+  &.nav {
+    background-color: $background;
+
+    .collapsebtn1 {
+      padding: 5px;
+      margin-right: 10px;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+
+      .animated-icon1 {
+        width: 20px;
+        height: 20px;
+        position: relative;
+        margin: 0px;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: 0.1s linear;
+        transition: 0.1s linear;
+        cursor: pointer;
+        span {
+          display: block;
+          position: absolute;
+          opacity: 1;
+          border-radius: 5px;
+          left: 0;
+          -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: 0.1s linear;
+          transition: 0.1s linear;
+          height: 1px;
+          width: 100%;
+          background: #fafafa;
+          &:nth-child(1) {
+            width: 60%;
+            top: 4px;
+          }
+
+          &:nth-child(2) {
+            top: 10px;
+            width: 50%;
+          }
+
+          &:nth-child(3) {
+            top: 15px;
+          }
+        }
+
+        &.open {
+          span {
+            &:nth-child(1) {
+              top: 10px;
+              left: 4px;
+              width: 100%;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+
+            &:nth-child(2) {
+              opacity: 0;
+              width: 0%;
+            }
+
+            &:nth-child(3) {
+              top: 10px;
+              left: 4px;
+              -webkit-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+    .navbar-brand {
+      //  width: 55px;
+      margin-right: 0;
+    }
+    .nav-link a {
+      color: $navLinks;
+      line-height: 24px;
+      font-size: 15px;
+      text-decoration: none;
+    }
+
+    .btn {
+      font-size: 14px;
+      line-height: 17px;
+    }
+
+    @media (max-width: 992px) {
+      .navbar-collapse {
+        position: fixed;
+        top: 10%;
+        left: 10%;
+        right: 10%;
+        z-index: 1030;
+        background: rgb(17, 25, 36);
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+.body {
+  .colored {
+    line-height: 41px;
+    color: $navLinks;
+  }
+
+  h1 {
+    margin-bottom: 3rem;
+  }
+
+  h5 {
+    @extend .colored;
+    font-size: 23px;
+  }
+  h6 {
+    @extend .colored;
+    font-size: 16px;
+    margin-bottom: 4rem;
+  }
+
+  .btn {
+    padding: 22px 40px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .header {
+    img {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .education {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      .card {
+        border-radius: 22px;
+        grid-row-end: span 2;
+        position: relative;
+        height: 300px;
+        margin: 1rem 0.8rem 0 0;
+        
+        img {
+          height: 100%;
+          border-radius: inherit;
+        }
+
+        .text {
+          background: rgba(17, 25, 36, 0.4);
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          border-radius: 22px 0;
+          padding: 1rem;
+          height: 100%;
+
+          * {
+            color: $color;
+          }
+
+          h5 {
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+          }
+        }
+
+        @media (min-width: 992px) {
+          grid-row-end: span 2;
+          height: 200px;
+          &:nth-child(2) {
+            grid-row-end: span 4;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 76px;
+      line-height: 91px;
+    }
+
+    h4 {
+      font-size: 44px;
+      line-height: 59px;
+    }
+  }
+}
+
+section {
+  .card-light {
+    background: $light-cards;
+    border-radius: 20px;
+  }
+
+  .apps {
+    span {
+      font-size: 15px;
+      line-height: 24px;
+      color: $spancolor;
+    }
+
+    small {
+      font-size: 12px;
+      line-height: 13px;
+    }
+
+    .card-dark {
+      background: $logos;
+      border-radius: 50px;
+      padding: 0.3rem 0.5rem;
+      display: flex;
+      align-items: center;
+      margin: 0 0.5rem;
+
+      &.wide {
+        min-width: 200px;
+      }
+
+      h5 {
+        font-size: 20px;
+        line-height: 27px;
+        color: $color;
+      }
+    }
+  }
+
+  .trades{
+    .card-light{
+      height: 245px;
+      text-align: center;
+
+      h5, h6{
+        color: $color;
+      }
+    }
+  }
+
+  .payment-cards{
+    padding: 2rem;
+    border-radius: 16px;
+    height: 162px;
+    width: 160px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    img{
+      height: 50%;
+      min-height: 80px;
+      width: 100%;
+    }
+  }
+  .large-grids{
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    .card {
+      border-radius: 24px;
+      grid-row-end: span 1;
+      position: relative;
+      height: 300px;
+      margin: 1rem 0.8rem 0 0;
+      max-width: 55%;
+      img {
+        height: 100%;
+        border-radius: inherit;
+      }
+
+      .text {
+        background: rgba(17, 25, 36, 0.4);
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        border-radius: 22px 0;
+        padding: 1rem;
+        height: 100%;
+
+        * {
+          color: $color;
+        }
+
+        h5 {
+          font-size: 20px;
+          line-height: 27px;
+          letter-spacing: 0.6px;
+          text-transform: uppercase;
+        }
+      }
+
+      @media (min-width: 992px) {
+        grid-row-end: span 1;
+        height: 220px;
+        max-width: 70%;
+        &:nth-child(2) {
+          grid-row-end: span 2;
+          height: 449px;
+        }
+      }
+
+    }
+  }
+}
+
+footer {
+  background-color: $logos;
+  color: $navLinks;
+  font-size: 12px;
+  line-height: 26px;
+
+  ul {
+    list-style: none;
+  }
+
+  .link-heads {
+    color: $color;
+    font-size: 16px;
+    line-height: 32px;
+    text-transform: uppercase;
+  }
+
+  .card {
+    height: 168px;
+    width: 168px;
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 27px;
+    border-radius: 4px;
+    padding: 1rem 2rem;
+
+    &.bg-red {
+      background: #eb3223;
+    }
+
+    &.bg-blue {
+      background: #3079ea;
+    }
+  }
+  .bottom-footer {
+    background-color: $light-cards;
+  }
+}
